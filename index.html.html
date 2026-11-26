@@ -1,0 +1,770 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sri Lakshmi Organic Oils</title>
+
+<style>
+
+/* BASIC STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffdf4;
+    color: #183d28;
+}
+
+/* HEADER */
+
+header {
+    background: #123e2b;
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f5ce67;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f5ce67;
+}
+
+.contact-btn {
+    background: #f5ce67;
+    color: #123e2b;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* CONTACT POPUP */
+
+.contact-box {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 75px;
+    background: white;
+    color: #183d28;
+    width: 300px;
+    padding: 22px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #888;
+    line-height: 2;
+}
+
+.contact-box h3 {
+    margin-bottom: 10px;
+    color: #17472d;
+}
+
+.contact-box a {
+    color: #16824d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-box button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px 2px;
+}
+
+.yes-btn {
+    background: #174b32;
+    color: white;
+}
+
+.no-btn {
+    background: #ddd;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 480px;
+    background: linear-gradient(120deg, #123e2b, #54834b);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 7%;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.hero-content {
+    max-width: 520px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #ffdc78;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.hero button {
+    background: #f5ce67;
+    color: #123e2b;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero img {
+    width: 260px;
+    height: 370px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+/* SECTION HEADINGS */
+
+.section-title {
+    font-size: 36px;
+    color: #17472d;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #777;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* PRODUCTS */
+
+.products {
+    padding: 65px 5%;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* PRODUCT CARDS */
+
+.product-card {
+    width: 440px;
+    min-height: 370px;
+    background: white;
+    border: 2px solid #ead99f;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 18px #ddd;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 22px #bbb;
+}
+
+.product-card img {
+    width: 175px;
+    height: 320px;
+    object-fit: contain;
+    display: block;
+}
+
+.product-info {
+    flex: 1;
+    text-align: left;
+}
+
+.product-info h3 {
+    color: #17472d;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.product-info p {
+    margin: 13px 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.price {
+    color: #b88620 !important;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.order-btn {
+    background: #174b32;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.order-btn:hover {
+    background: #e5b941;
+    color: #123e2b;
+}
+
+/* ABOUT SECTION */
+
+.about {
+    background: #edf1df;
+    padding: 65px 10%;
+    text-align: center;
+}
+
+.about p {
+    max-width: 850px;
+    margin: 20px auto;
+    line-height: 1.9;
+    color: #555;
+    font-size: 17px;
+}
+
+/* FEATURES */
+
+.features {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.feature {
+    background: white;
+    padding: 30px;
+    width: 230px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #ddd;
+}
+
+.feature h3 {
+    color: #b88620;
+    margin-bottom: 12px;
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+    background: #f5efd9;
+    padding: 55px 15px;
+    text-align: center;
+}
+
+.contact-section p {
+    margin: 15px;
+    font-size: 17px;
+}
+
+.contact-section a {
+    color: #17613c;
+    text-decoration: none;
+}
+
+/* FOOTER */
+
+footer {
+    background: #123e2b;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    line-height: 2;
+}
+
+footer h2 {
+    color: #f5ce67;
+    margin-bottom: 10px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 850px) {
+
+    header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero img {
+        margin-top: 25px;
+    }
+
+    .product-card {
+        width: 100%;
+        max-width: 440px;
+    }
+}
+
+@media(max-width: 400px) {
+
+    .product-card {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .product-card img {
+        width: 115px;
+        height: 250px;
+    }
+
+    .product-info h3 {
+        font-size: 18px;
+    }
+
+    .product-info p {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 19px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        🌿 Sri Lakshmi
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="contact-btn" onclick="toggleContact()">
+        ☎ Contacts
+    </button>
+
+    <!-- CONTACT POPUP -->
+
+    <div class="contact-box" id="contactBox">
+
+        <h3>Contact Details</h3>
+
+        <p>
+            📞 <a href="tel:9963360079">
+            9963360079</a>
+        </p>
+
+        <p>
+            ✉ <a href="mailto:priyaalapati770@gmail.com">
+            Email Us</a>
+        </p>
+
+        <hr>
+
+        <h4>Do you want to order?</h4>
+
+        <button class="yes-btn" onclick="contactOrder()">
+            Yes
+        </button>
+
+        <button class="no-btn" onclick="toggleContact()">
+            No
+        </button>
+
+    </div>
+
+</header>
+
+<!-- HOME SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Pure & Natural
+            Organic Oils
+        </h1>
+
+        <p>
+            Experience the goodness of nature
+            with Sri Lakshmi Organic Oils.
+
+            Pure and quality edible oils
+            for your everyday cooking.
+        </p>
+
+        <button onclick="goToProducts()">
+            Explore Our Products →
+        </button>
+
+    </div>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXxGrfHAo4Fj3ie7QQEYOOIp7Lyvt5etNHJT5uEbGEEg&s=10"
+         alt="Sri Lakshmi Groundnut Oil Bottle">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-Je3JmDWPKxXndCVGFzoel8q6Jv_EdjgX5iSfkHmCMg&s=10"
+         alt="Sri Lakshmi Groundnut Oil Bottle">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysIXeMuT2Vkq3I0VZ-by01g9wHjBdKIefCxjkvvHQEQ&s=10"
+         alt="Sri Lakshmi Groundnut Oil Bottle">
+
+
+</section>
+
+<!-- PRODUCTS SECTION -->
+
+<section class="products" id="products">
+
+    <h2 class="section-title">
+        Our Products
+    </h2>
+
+    <p class="subtitle">
+        Discover the natural goodness of our oils
+    </p>
+
+    <div class="product-container">
+
+        <!-- GROUNDNUT OIL -->
+
+        <div class="product-card">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXxGrfHAo4Fj3ie7QQEYOOIp7Lyvt5etNHJT5uEbGEEg&s=10"
+                 alt="Groundnut Oil Bottle">
+
+            <div class="product-info">
+
+                <h3>Groundnut Oil</h3>
+
+                <p>
+                    100% Natural Cold Pressed Oil
+                </p>
+
+                <p class="price">
+                    ₹400 / Litre
+                </p>
+
+                <button class="order-btn"
+                    onclick="orderNow('Groundnut Oil',400)">
+                    Order Now →
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- SESAME OIL -->
+
+        <div class="product-card">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-Je3JmDWPKxXndCVGFzoel8q6Jv_EdjgX5iSfkHmCMg&s=10"
+                 alt="White Sesame Oil Bottle">
+
+            <div class="product-info">
+
+                <h3>White Sesame Oil</h3>
+
+                <p>
+                    Pure White Sesame Seed Oil
+                </p>
+
+                <p class="price">
+                    ₹500 / Litre
+                </p>
+
+                <button class="order-btn"
+                    onclick="orderNow('White Sesame Oil',500)">
+                    Order Now →
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- SUNFLOWER OIL -->
+
+        <div class="product-card">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysIXeMuT2Vkq3I0VZ-by01g9wHjBdKIefCxjkvvHQEQ&s=10"
+                 alt="Sunflower Oil Bottle">
+
+            <div class="product-info">
+
+                <h3>Sunflower Oil</h3>
+
+                <p>
+                    Pure and Natural Sunflower Oil
+                </p>
+
+                <p class="price">
+                    ₹650 / Litre
+                </p>
+
+                <button class="order-btn"
+                    onclick="orderNow('Sunflower Oil',650)">
+                    Order Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT SECTION -->
+
+<section class="about" id="about">
+
+    <h2 class="section-title">
+        About Sri Lakshmi Organic Oils
+    </h2>
+
+    <p>
+        Sri Lakshmi Organic Oils brings you
+        quality edible oils for your everyday needs.
+
+        Our products include Groundnut Oil,
+        White Sesame Oil and Sunflower Oil.
+
+        We aim to provide natural and quality
+        products to every home.
+    </p>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <h2 class="section-title">
+        Why Choose Us?
+    </h2>
+
+    <div class="feature-container">
+
+        <div class="feature">
+            <h3>🌿 Natural</h3>
+            <p>Quality edible oils</p>
+        </div>
+
+        <div class="feature">
+            <h3>💧 Pure Oils</h3>
+            <p>Natural goodness</p>
+        </div>
+
+        <div class="feature">
+            <h3>❤️ Quality</h3>
+            <p>Carefully prepared products</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact-section" id="contact">
+
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
+    <p>
+        📞 Phone:
+        <a href="tel:9963360079">
+            9963360079
+        </a>
+    </p>
+
+    <p>
+        ✉ Email:
+        <a href="mailto:priyaalapati770@gmail.com">
+            priyaalapati770@gmail.com
+        </a>
+    </p>
+
+    <p>
+        Contact us for product and ordering details.
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>🌿 Sri Lakshmi Organic Oils</h2>
+
+    <p>
+        Pure Oils | Natural Goodness | Quality Products
+    </p>
+
+    <p>Phone: 9963360079</p>
+
+    <p>Email: priyaalapati770@gmail.com</p>
+
+    <p>
+        © 2026 Sri Lakshmi Organic Oils.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// CONTACT POPUP
+
+function toggleContact() {
+
+    let box = document.getElementById("contactBox");
+
+    if (box.style.display === "block") {
+        box.style.display = "none";
+    } else {
+        box.style.display = "block";
+    }
+
+}
+
+// EXPLORE PRODUCTS
+
+function goToProducts() {
+
+    document.getElementById("products")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+// CONTACT ORDER
+
+function contactOrder() {
+
+    let message =
+        "Hello Sri Lakshmi Organic Oils! " +
+        "I want to know more about your products. " +
+        "Please share the ordering details.";
+
+    let url =
+        "https://wa.me/919963360079?text=" +
+        encodeURIComponent(message);
+
+    window.open(url, "_blank");
+
+}
+
+// PRODUCT ORDER
+
+function orderNow(product, price) {
+
+    let message =
+        "Hello Sri Lakshmi Organic Oils!\n\n" +
+        "I want to order: " + product + "\n" +
+        "Price: Rs." + price + " per litre\n\n" +
+        "Please share the ordering details.";
+
+    let url =
+        "https://wa.me/919963360079?text=" +
+        encodeURIComponent(message);
+
+    window.open(url, "_blank");
+
+}
+
+// CLOSE POPUP WHEN CLICKING OUTSIDE
+
+document.addEventListener("click", function(event) {
+
+    let box = document.getElementById("contactBox");
+    let button = document.querySelector(".contact-btn");
+
+    if (!box.contains(event.target) &&
+        !button.contains(event.target)) {
+
+        box.style.display = "none";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
